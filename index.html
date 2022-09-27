@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+<header>
+    <a href="#" class="logo">travel</a> 
+    <div class="menu">
+     
+    </div>
+    <div class="nav" >
+        <div class="nav-items">
+            <a href="#">home</a>
+            <a href="#">contect</a>
+            <a href="#">emails</a>
+
+        </div>
+    </div>
+</header>
+<section class="main">
+    <video class="slides active" src="v1.mp4" autoplay muted loop>
+
+    </video>
+    <video class="slides" src="v2.mp4" autoplay muted loop>
+
+    </video>
+    <video class="slides" src="v3.mp4" autoplay muted loop>
+
+    </video>
+    <div class="content active">
+        <h1>made by<span>@kareka</span></h1>
+        <p>Ah shit here we go again</p>
+        <a href="#">read more</a>
+    </div>
+    <div class="content">
+        <h1>made by the same person</h1>
+        <p>type your artical here</p>
+        <a href="#">read more</a>
+    </div>
+    <div class="content">
+        <h1>made by.....</h1>
+        <p>as before type ur artical here</p>
+        <a href="#">read more</a>
+    </div>
+    <div class="icons">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+    <div class="slider">
+        <div class="slider-btn active"></div>
+        <div class="slider-btn"></div>
+        <div class="slider-btn"></div>
+    </div>
+   
+</section>
+<script>
+    // menu
+    const menu = document.querySelector(".menu");
+    const nav = document.querySelector(".nav");
+
+    menu.addEventListener("click",()=>{
+        menu.classList.toggle("active");
+        nav.classList.toggle("active");
+
+    });
+
+    // video 
+    const slider = document.querySelectorAll(".slider-btn");
+    const slides = document.querySelectorAll(".slides");
+    const contents = document.querySelectorAll(".content")
+    
+    
+    
+    var slider_circl= function(manual){
+        slider.forEach((btn) => {
+            btn.classList.remove("active");
+        });
+
+        slides.forEach((slide) => {
+            slide.classList.remove("active");
+        });
+        contents.forEach((content) => {
+            content.classList.remove("active")
+        });
+       
+        slider[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+    }
+    
+    slider.forEach((btn,i) => {
+        btn.addEventListener("click", () => {
+            slider_circl(i);
+        });
+    });
+
+</script>
+</body>
+</html>
